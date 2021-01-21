@@ -1,0 +1,437 @@
+/*Smooth scroll behaviour for more visually appealing transition to top of page.*/
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: auto;
+    display:block;
+    position: relative; 
+    width: 67%;      
+}
+
+/******Header Section******/
+#header-block{  
+    padding:0; 
+    margin: auto;
+    display:block;
+    position: relative;      
+    background-color: #423C58;
+    user-select: none;
+}
+
+#title-block{      
+    top: 10%;
+    right:6%;
+    width: 41%;
+    height: 30%;    
+    display:block;
+    position: absolute;    
+    border: 0.3vw solid white;    
+    z-index: 1;    
+    overflow: hidden; 
+}
+
+#title-background{
+    display:block;
+    position: absolute;
+    width: 100%;
+    height: 100%;   
+    background-color: #423C58;
+    z-index: -1;
+    opacity: 0.82;
+}
+
+#title{
+    margin:auto;
+    padding: 6% 0 5% 0;
+    font-size: 3.2vw;
+    text-align: center;
+    color:#51CCFF;
+}
+
+#subtext{
+    margin:auto;
+    padding: 3% 0 5% 0;
+    font-size: 2vw;
+    text-align: center;
+    color:white;
+}
+
+#img-div{  
+    margin:0;  
+    background-color: #9498C0;
+    font-size: 0vw;
+}
+
+#image{    
+    width: 100%; 
+}
+
+/******About section******/
+#description-block{    
+    display:block;    
+    line-height: 1.8;
+    font-size: 1.5rem;
+    text-align: justify;
+}
+
+#description-block p{
+    padding: 2% 6% 2% 6%;
+}
+
+.format-link{
+    color:#029BCE;
+    text-decoration: none;
+}
+
+/******Biographical Timeline Section******/
+#tribute-info{ 
+    background: #9498C0;  
+    padding: 2% 0 2% 0;      
+}
+
+/*Used CSS grid to overlap date and detail blocks.*/
+#wiki-container, .timeline{   
+    padding: 4% 6% 4% 6%;
+    display: grid;
+    grid-template-columns: 1fr 14fr;
+    list-style: none;
+    overflow: hidden;
+}
+
+#timeline-img{
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;  
+}
+
+/*Biography date section*/
+#wiki-logo, .date{    
+    grid-column: 1 /span 2;
+    grid-row: 1/ span 1;
+    z-index: 1;
+    justify-items: baseline;
+}
+
+.circle{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 7vw;
+    height: 7vw;
+    border-radius: 50%;  
+    border: 0.3vw solid white;
+    background-color: #423C58;
+    box-shadow: -1px 0px 8px black;
+    color: #51CCFF;
+    font-size: 1.8rem;
+    font-weight: bold;
+    user-select: none;
+    overflow:hidden;
+}
+
+.circle-header{    
+    width: 8.5vw;
+    height: 8.5vw;
+    border: 0.35vw solid white;
+}
+
+/*Biography details section*/
+#wiki-block, .details-block{
+    grid-column: 2 /span 2;
+    grid-row: 1/ span 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;     
+    border-radius: 10px;
+    box-shadow: 0px 0px 8px black;
+    background: #423C58;     
+}
+
+#wiki-details, .details{  
+    padding: 4% 10% 4% 10%;
+    font-size: 1.6rem;
+    text-align: center;
+    line-height: 1.8;
+    color: white; 
+    z-index: 1;    
+    overflow: hidden;
+}
+
+#details-header{   
+    font-size: 2.1rem; 
+}
+
+#details-header h3{    
+    margin:0;
+}
+
+/*External links within biography*/
+.wikipedia-link{
+    color:#ACFFFF;
+    text-decoration: none;
+}
+
+/******Slideshow section******/
+#quotes-block{
+    padding: 5% 1% 5% 1%;
+    display: grid;
+    grid-template-columns: 4fr 12fr;   
+    grid-template-rows: 2fr 1fr; 
+}
+
+#gandhi-smiling-img{    
+    grid-row: 1/ span 2;
+    width: 90%;  
+    padding:5%;
+    box-shadow: 0px 0px 10px black;
+    border-radius: 50%;
+    user-select: none;
+}
+
+/*Slideshow quotes*/
+.quote-container{   
+    padding: 0 2% 0 2%;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    text-align: center;        
+    font-weight: bold;
+}
+
+.quote-container ul{
+    margin:0;
+    padding:0;
+    list-style: none;
+}
+
+.quotes{    
+    display:none;
+    color: #423C58;
+    animation-name: fadein;
+    animation-duration: 3s;
+}
+
+@keyframes fadein{
+    from {opacity:0;}
+    to {opacity:1;}
+}
+
+/*Slideshow buttons*/
+.slideshow-button{     
+    margin: 0% 3% 0 3%; 
+    grid-column: 2/ span 1;
+    grid-row: 2/ span 1;  
+    width: 1.5vw;
+    height: 1.5vw;    
+    border-radius: 50%;
+    box-shadow: 0px 0px 8px black;
+    background-color: white;
+    display: inline-block;    
+}
+
+.button-active, .slideshow-button:hover {
+	background-color:#ACFFFF;
+}
+
+/******Wikipedia Section******/
+#wikipedia-link{   
+    background-color: #9498C0;
+    width: 100%; 
+      
+}
+
+#wikipedia-img{ 
+    padding: 7% 0 0 1%;
+    width: 70%;  
+}
+
+#wikipedia-link div p{ 
+    margin:auto;    
+    padding: 2% 10% 2% 10%;
+    line-height: 1.6;
+    font-size: 2rem;
+}
+
+#tribut-link{
+        color:#ACFFFF;
+        text-decoration: none;
+}
+
+/******Footer Section******/
+#footer{
+    padding: 30px;
+    display:flex;
+    flex-direction: column;
+    row-gap: 30px;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+
+#footer p{
+    margin:0;
+}
+
+#footer div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#return-top{
+    margin:auto;
+    width:0;
+    height:0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #029BCE;
+}
+
+#github-img{
+    padding: 0 5px 0 5px;
+    display: inline-block;
+    width: 32px;    
+    user-select: none;
+}
+
+/*Resize for tablet and mobile devices when screen width is 970px or less.*/
+@media screen and (max-width: 970px){
+    body{
+        width:100%;
+    }
+
+/******Header Section******/
+    #title-block{      
+        top: 5%;
+        right:3%;
+        width: 47%;
+        height: 35%;     
+        border: .6vw solid white;    
+    }
+     
+    #title{
+        font-size: 5.7vw;
+    }
+    
+    #subtext{
+        margin:auto;
+        padding: 3% 0 5% 0;
+        font-size: 4vw;
+        color:white;
+    }  
+
+/******About section******/
+    #description-block{
+        padding: 2% 6% 2% 6%;
+        line-height: 1.5;
+        font-size: 1.3rem;
+    }
+
+/******Biographical Timeline Section******/
+#wiki-container, .timeline{    
+        padding: 6% 3% 6% 3%;
+        grid-template-columns: 1fr 9fr;
+    }
+    
+    .circle{   
+        width: 16vw;
+        height: 16vw;
+        border: .6vw solid white;
+        font-size: 2rem;
+    }
+
+    .circle-header{    
+        width: 18vw;
+        height: 18vw;
+        border: .8vw solid white;
+    }  
+
+    #wiki-details, .details{  
+        padding: 6% 12% 6% 12%;
+        font-size: 1.7rem;
+    }
+
+    #details-header{   
+        font-size: 1.9rem; 
+    }
+
+/******Slideshow section******/
+.quote-container{   
+    padding: 0 4% 0 4%;
+    font-size: 1.8rem;
+}
+
+.slideshow-button{  
+    width: 3vw;
+    height: 3vw;
+    margin: 0% 5% 0 5%;
+}
+
+/******Wikipedia Section******/
+    #wikipedia-link div p{ 
+        padding: 2% 13% 2% 13%;
+    }
+ 
+}
+
+/*Resize for smaller mobile devices when screen width is 480px or less.*/
+@media screen and (max-width: 480px){ 
+/******About section******/
+    #description-block{
+        padding: 2% 5% 2% 5%;
+        line-height: 1.4;
+        font-size: 1.2rem;
+    }
+
+/******Biographical Timeline Section******/
+#wiki-container, .timeline{    
+        padding: 6% 3% 6% 3%;
+        grid-template-columns: 1fr 7fr;
+    }
+    
+    .circle{   
+        width: 20vw;
+        height: 20vw;
+        border: .8vw solid white;
+        font-size: 1.5rem;
+    }
+
+    .circle-header{    
+        width: 22vw;
+        height: 22vw;
+        border: 1vw solid white;
+    }  
+
+    #wiki-details, .details{ 
+        padding: 6% 14% 6% 14%;
+        font-size: 1.3rem;
+    }
+
+    #details-header{   
+        font-size: 1.5rem; 
+    }
+
+/******Slideshow section******/
+    .quote-container{    
+        font-size: 1.1rem;
+    }
+      
+    
+    .slideshow-button{   
+        width: 3.5vw;
+        height: 3.5vw;
+        margin: 0% 6% 0 6%;
+    }
+
+/******Wikipedia Section******/
+    #wikipedia-link div p{ 
+        padding: 2% 14% 2% 14%;
+        line-height: 1.4;
+        font-size: 1.5rem;
+    } 
+ 
+}
+
