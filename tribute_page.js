@@ -6,6 +6,7 @@ var timer;
 //Automatically display slideshow
 function slideshow(){
     var i;
+    slideshow_index++;
     slide = document.getElementsByClassName("quotes");    
     button = document.getElementsByClassName("slideshow-button");    
     
@@ -15,12 +16,10 @@ function slideshow(){
     
     for (i = 0; i < button.length; i++) {
         button[i].classList.remove("button-active"); //Reset button color to white
-      } 
-      
-    slideshow_index++;
-
+      }      
+    
     if (slideshow_index > slide.length) {
-        slideshow_index = 1
+        slideshow_index = 1; //Reset index if it goes over the number of buttons available
     }       
     
     slide[slideshow_index-1].style.display = "block";  //Show quote    
@@ -30,17 +29,10 @@ function slideshow(){
 
 slideshow();
 
-//On button click check input and change slideshow accordingly
-function slideSelect(index) {  
-    //Reset index if it falls outside of the range of the number of buttons
-    if (index > slide.length) {
-        index = 1
-    }else if(index<1){
-        index = slide.length
-    }
-    
+//On button click switch to the slideshow that matches the button.
+function slideSelect(index) {        
+    slideshow_index = index-1;
     clearTimeout(timer); //Reset active timer
-    slideshow_index = index-1; 
     slideshow();
 }
 
